@@ -8,7 +8,7 @@ export type MessageDbModel = Document & {
   date: Date;
 };
 
-export type MessagbModel = {
+export type MessageModel = {
   body: string;
   sentBy: string;
   channel: string;
