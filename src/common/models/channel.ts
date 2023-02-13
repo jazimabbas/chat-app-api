@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import { ChannelModel } from "./types/channel.type";
-import { MODEL_NAMES } from "./types/model-names.type";
+import { ChannelDbModel } from "./types/channel";
+import { MODEL_NAMES } from "./types/model-names";
 
-const channelSchema = new Schema<ChannelModel>({
+const channelSchema = new Schema<ChannelDbModel>({
   name: { type: String, required: false },
   image: { type: String, required: false },
   autoId: { type: Number, default: 0 },
@@ -19,5 +19,5 @@ const channelSchema = new Schema<ChannelModel>({
   },
 });
 
-const Channel = mongoose.model<ChannelModel>(MODEL_NAMES.channel, channelSchema);
+const Channel = mongoose.model<ChannelDbModel>(MODEL_NAMES.channel, channelSchema);
 export default Channel;

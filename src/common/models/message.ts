@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import { MessageModel } from "./types/message.type";
-import { MODEL_NAMES } from "./types/model-names.type";
+import { MessageDbModel } from "./types/message";
+import { MODEL_NAMES } from "./types/model-names";
 
-const messageSchema = new Schema<MessageModel>({
+const messageSchema = new Schema<MessageDbModel>({
   autoId: { type: Number, default: 0 },
   body: { type: String, required: true },
   channel: { type: Schema.Types.ObjectId, ref: MODEL_NAMES.channel },
@@ -10,5 +10,5 @@ const messageSchema = new Schema<MessageModel>({
   date: { type: Date, default: Date.now },
 });
 
-const Message = mongoose.model(MODEL_NAMES.message, messageSchema);
+const Message = mongoose.model<MessageDbModel>(MODEL_NAMES.message, messageSchema);
 export default Message;

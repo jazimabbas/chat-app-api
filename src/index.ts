@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import * as wsApi from "./ws";
 import * as restApi from "./rest";
 import dbConnect from "./common/db/connect";

@@ -1,14 +1,14 @@
 import mongoose, { Schema } from "mongoose";
-import { MODEL_NAMES } from "./types/model-names.type";
-import { InboxModel, UserModel } from "./types/user.type";
+import { MODEL_NAMES } from "./types/model-names";
+import { InboxDbModel, UserDbModel } from "./types/user";
 
-const userSchema = new Schema<UserModel>({
+const userSchema = new Schema<UserDbModel>({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
   profileImage: { type: String, required: false },
   inbox: [
-    new Schema<InboxModel>(
+    new Schema<InboxDbModel>(
       {
         channel: { type: Schema.Types.ObjectId, ref: MODEL_NAMES.channel },
         user: { type: Schema.Types.ObjectId, ref: MODEL_NAMES.user },
@@ -18,5 +18,5 @@ const userSchema = new Schema<UserModel>({
   ],
 });
 
-const User = mongoose.model<UserModel>(MODEL_NAMES.user, userSchema);
+const User = mongoose.model<UserDbModel>(MODEL_NAMES.user, userSchema);
 export default User;
