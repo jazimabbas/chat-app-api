@@ -1,5 +1,6 @@
 import { Document, Types } from "mongoose";
 import { MessageStatus } from "../../utils/app.type";
+import { MessageModel } from "./message";
 
 export type UserDbChannel = {
   userId?: Types.ObjectId;
@@ -24,11 +25,12 @@ export type UserChannel = {
   deliveredAutoId?: number;
 };
 
-export type ChannelModel = Document & {
+export type ChannelModel = {
+  id: string;
   name?: string;
   createdBy?: string;
   image?: string;
   autoId?: number;
-  lastMessage?: string;
+  lastMessage?: string | MessageModel;
   users?: Map<string, UserChannel>;
 };

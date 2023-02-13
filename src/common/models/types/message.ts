@@ -9,6 +9,7 @@ export type MessageDbModel = Document & {
 };
 
 export type MessageModel = {
+  id: string;
   body: string;
   sentBy: string;
   channel: string;
