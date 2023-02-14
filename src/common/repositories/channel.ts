@@ -1,8 +1,8 @@
 import { Service, Inject } from "typedi";
 
 import User from "../models/user";
-import Channel from "../models/channel";
 import { depNames } from "../utils/typedi";
+import Channel from "../models/channel";
 import { BadRequestError } from "../utils/custom-errors";
 import { ChannelRepositoryMapper } from "./mappers/channel.mapper";
 import { ChannelDbModel, ChannelModel } from "../models/types/channel";

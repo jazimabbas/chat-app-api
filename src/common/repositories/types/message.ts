@@ -1,4 +1,4 @@
-import { MessageModel } from "../../../common/models/types/message";
+import { MessageModel } from "@/common/models/types/message";
 
 export type SaveMessageDto = {
   body: string;

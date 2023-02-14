@@ -1,10 +1,9 @@
 import { Service } from "typedi";
 import { Document } from "mongoose";
 
-import { depNames } from "../../../common/utils/typedi";
-import { MessageModel } from "../../../common/models/types/message";
-import { MessageDbModel } from "../../..//common/models/types/message";
-import { ChannelDbModel, ChannelModel, UserChannel } from "../../../common/models/types/channel";
+import { depNames } from "@/common/utils/typedi";
+import { MessageDbModel, MessageModel } from "@/common/models/types/message";
+import { ChannelDbModel, ChannelModel, UserChannel } from "@/common/models/types/channel";
 
 @Service({ name: depNames.channelRepoMapper })
 export class ChannelRepositoryMapper {

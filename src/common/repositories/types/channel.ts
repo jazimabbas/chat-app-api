@@ -1,5 +1,5 @@
-import { MessageStatus } from "../../../common/utils/app.type";
-import { ChannelModel } from "../../../common/models/types/channel";
+import { MessageStatus } from "@/common/utils/app.type";
+import { ChannelModel } from "@/common/models/types/channel";
 
 export type CreateChannelDto = {
   userId: string;
